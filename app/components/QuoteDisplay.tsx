@@ -14,7 +14,7 @@ export function QuoteDisplay({ quote, author }: QuoteDisplayProps) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="max-w-5xl mx-auto px-4 h-full flex flex-col max-h-full overflow-y-auto"
+        className="mx-auto px-4 h-full flex flex-col max-h-full overflow-y-auto"
       >
         <div className="flex-1 overflow-y-auto py-4 px-2">
           {/* Decorative top border */}
@@ -28,8 +28,8 @@ export function QuoteDisplay({ quote, author }: QuoteDisplayProps) {
           <blockquote className="relative">
             <div className="absolute -left-2 -top-2 text-4xl text-emerald-400/30" style={{ fontFamily: 'Cinzel, serif' }}>"</div>
             <p
-              className="text-xl md:text-2xl lg:text-3xl text-center text-teal-50 leading-relaxed relative z-10 px-4"
-              style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 400 }}
+              className="text-base md:text-l lg:text-xl text-teal-50 leading-relaxed relative z-10 px-4"
+              style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 400, whiteSpace: "pre-line" }}
             >
               {quote}
             </p>
