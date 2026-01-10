@@ -1,17 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Sidebar } from './components/Sidebar';
 import { QuoteDisplay } from './components/QuoteDisplay';
 import { IslamicPattern } from './components/IslamicPattern';
+import { AboutModal } from './components/AboutModal';
 import { quotePages } from './data/quotes';
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(0);
+  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const page = quotePages[currentPage];
+
+  // Listen for About button clicks from Header
+  useEffect(() => {
+    const handleOpenAboutModal = () => setIsAboutModalOpen(true);
+    window.addEventListener('openAboutModal', handleOpenAboutModal);
+    return () => window.removeEventListener('openAboutModal', handleOpenAboutModal);
+  }, []);
 
   return (
     <div className="size-full flex flex-col bg-gradient-to-br from-teal-950 via-emerald-950 to-cyan-950">
@@ -102,6 +111,9 @@ export default function Home() {
       </div>
 
       <Footer />
+
+      {/* About Modal */}
+      <AboutModal isOpen={isAboutModalOpen} onClose={() => setIsAboutModalOpen(false)} />
     </div>
   );
 }

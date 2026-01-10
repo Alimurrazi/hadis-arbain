@@ -30,7 +30,9 @@ export function Header() {
       </div>
 
       {/* Header content */}
-      <div className="relative z-10 h-full flex items-center justify-center">
+      <div className="relative z-10 h-full flex items-center justify-between px-8">
+        <div className="flex-1"></div>
+
         <div className="text-center">
           <h1 className="text-4xl text-teal-50" style={{ fontFamily: 'Cinzel, serif' }}>
             ✦ Islamic Wisdom ✦
@@ -38,6 +40,17 @@ export function Header() {
           <p className="text-sm text-teal-200 mt-1" style={{ fontFamily: 'Amiri, serif' }}>
             Timeless Quotes from the Heart of Islam
           </p>
+        </div>
+
+        <div className="flex-1 flex justify-end">
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent('openAboutModal'))}
+            className="px-6 py-2 bg-emerald-700/60 hover:bg-emerald-600/70 border border-emerald-500/50 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+          >
+            <span className="text-teal-50 text-sm" style={{ fontFamily: 'Cinzel, serif' }}>
+              About
+            </span>
+          </button>
         </div>
       </div>
 
