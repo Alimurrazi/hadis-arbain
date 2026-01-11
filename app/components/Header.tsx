@@ -35,7 +35,7 @@ export function Header() {
 
         <div className="text-center">
           <h1 className="text-4xl text-teal-50" style={{ fontFamily: 'Cinzel, serif' }}>
-            ✦ Islamic Wisdom ✦
+            ✦ ইমাম নববির চল্লিশ হাদিস ✦
           </h1>
           <p className="text-sm text-teal-200 mt-1" style={{ fontFamily: 'Amiri, serif' }}>
             Timeless Quotes from the Heart of Islam
