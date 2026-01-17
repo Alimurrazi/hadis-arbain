@@ -47,27 +47,7 @@ export default function Home() {
               {/* Base color gradient */}
               <div
                 className="absolute inset-0"
-                style={{
-                  background: `radial-gradient(ellipse at center, ${page.colors[0]}20, transparent 70%)`,
-                }}
               />
-
-              {/* Layered Islamic patterns */}
-              {page.patterns.map((pattern, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1, delay: index * 0.2 }}
-                  className="absolute inset-0"
-                >
-                  <IslamicPattern
-                    color={pattern.color}
-                    opacity={pattern.opacity}
-                    patternType={pattern.type}
-                  />
-                </motion.div>
-              ))}
 
               {/* Overlay gradient for depth */}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30" />
@@ -75,7 +55,7 @@ export default function Home() {
           </AnimatePresence>
 
           {/* Quote display */}
-          <div className="relative z-10 h-full flex items-center justify-center p-12">
+          <div className="relative z-10 h-full flex items-center justify-center p-8">
             <QuoteDisplay
               quote={page.quote}
               author={page.author}
