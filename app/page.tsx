@@ -9,11 +9,22 @@ import { QuoteDisplay } from './components/QuoteDisplay';
 import { IslamicPattern } from './components/IslamicPattern';
 import { AboutModal } from './components/AboutModal';
 import { quotePages } from './data/quotes';
+import { ProgressBar } from './components/ProgressBar';
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(0);
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
+    const [completedPages, setCompletedPages] = useState<Set<number>>(() => {
+    // Load completed pages from localStorage
+    const saved = localStorage.getItem('islamicWisdomCompleted');
+    return saved ? new Set(JSON.parse(saved)) : new Set();
+  });
   const page = quotePages[currentPage];
+
+    // Save completed pages to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('islamicWisdomCompleted', JSON.stringify([...completedPages]));
+  }, [completedPages]);
 
   // Listen for About button clicks from Header
   useEffect(() => {
@@ -22,15 +33,32 @@ export default function Home() {
     return () => window.removeEventListener('openAboutModal', handleOpenAboutModal);
   }, []);
 
+    const handleToggleComplete = (pageIndex: number) => {
+    setCompletedPages((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(pageIndex)) {
+        newSet.delete(pageIndex);
+      } else {
+        newSet.add(pageIndex);
+      }
+      return newSet;
+    });
+  };
+
   return (
     <div className="size-full flex flex-col bg-white">
       <Header />
+
+      <ProgressBar completed={completedPages.size} total={quotePages.length} />
+      
 
       <div className="flex-1 flex overflow-hidden">
         <Sidebar
           pages={quotePages}
           currentPage={currentPage}
           onPageChange={setCurrentPage}
+          completedPages={completedPages}
+          onToggleComplete={handleToggleComplete}
         />
 
         <main className="flex-1 relative overflow-hidden">
