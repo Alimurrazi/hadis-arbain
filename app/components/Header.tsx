@@ -4,7 +4,7 @@ interface HeaderProps {
 
 export function Header({ onToggleSidebar }: HeaderProps) {
   return (
-    <header className="relative w-full h-24 bg-gradient-to-r from-teal-900 via-emerald-800 to-teal-900 border-b-4 border-teal-600 overflow-hidden">
+    <header className="relative w-full h-20 md:h-24 bg-gradient-to-r from-teal-900 via-emerald-800 to-teal-900 border-b-4 border-teal-600 overflow-hidden">
       {/* Persian motif pattern */}
       <div className="absolute inset-0 opacity-20">
         <svg className="w-full h-full" preserveAspectRatio="xMidYMid slice">
@@ -34,7 +34,7 @@ export function Header({ onToggleSidebar }: HeaderProps) {
       </div>
 
       {/* Header content */}
-      <div className="relative z-10 h-full flex items-center justify-between px-8">
+      <div className="relative z-10 h-full flex items-center justify-between px-4 md:px-8">
         <div className="flex-none mr-4 md:hidden">
           <button
             onClick={() => onToggleSidebar && onToggleSidebar()}
@@ -49,11 +49,11 @@ export function Header({ onToggleSidebar }: HeaderProps) {
 
         <div className="flex-1"></div>
 
-        <div className="text-center">
-          <h1 className="text-4xl text-teal-50" style={{ fontFamily: 'Cinzel, serif' }}>
+        <div className="text-center px-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl text-teal-50 leading-tight break-words" style={{ fontFamily: 'Cinzel, serif' }}>
             ✦ ইমাম নববির চল্লিশ হাদিস ✦
           </h1>
-          <p className="text-m text-teal-200 mt-1" style={{ fontFamily: 'Amiri, serif' }}>
+          <p className="text-xs sm:text-sm md:text-sm text-teal-200 mt-1 break-words" style={{ fontFamily: 'Amiri, serif' }}>
             Collection of prophetic teachings that summarize the core principles of Islam
           </p>
         </div>
@@ -61,9 +61,9 @@ export function Header({ onToggleSidebar }: HeaderProps) {
         <div className="flex-1 flex justify-end">
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('openAboutModal'))}
-            className="px-6 py-2 bg-emerald-700/60 hover:bg-emerald-600/70 border border-emerald-500/50 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+            className="px-3 py-1 sm:px-6 sm:py-2 bg-emerald-700/60 hover:bg-emerald-600/70 border border-emerald-500/50 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
           >
-            <span className="text-teal-50 text-sm" style={{ fontFamily: 'Cinzel, serif' }}>
+            <span className="text-teal-50 text-xs sm:text-sm" style={{ fontFamily: 'Cinzel, serif' }}>
               About
             </span>
           </button>
