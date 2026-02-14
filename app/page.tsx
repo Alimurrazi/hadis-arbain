@@ -109,6 +109,10 @@ useEffect(() => {
             <QuoteDisplay
               quote={page.quote}
               author={page.author}
+              onNext={() => setCurrentPage((c) => Math.min(c + 1, quotePages.length - 1))}
+              onPrev={() => setCurrentPage((c) => Math.max(c - 1, 0))}
+              disableNext={currentPage >= quotePages.length - 1}
+              disablePrev={currentPage <= 0}
             />
           </div>
 

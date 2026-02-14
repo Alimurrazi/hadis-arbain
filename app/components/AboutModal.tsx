@@ -66,9 +66,6 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                   <h2 className="text-3xl text-emerald-900 mb-2 font-bold" style={{ fontFamily: 'Cinzel, serif' }}>
                     ইমাম নববির চল্লিশ হাদিস
                   </h2>
-                  <p className="text-m text-gray-700" style={{ fontFamily: 'Amiri, serif' }}>
-                    Collection of prophetic teachings that summarize the core principles of Islam
-                  </p>
                 </div>
 
                 {/* Content sections */}
@@ -81,7 +78,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                     <p className="leading-relaxed" style={{ fontFamily: 'Amiri, serif' }}>
 যুগে যুগে আলিমগণ হাদীসের ভাণ্ডার থেকে নির্দিষ্ট কিছু হাদীস চয়ন করে স্বতন্ত্র গ্রন্থে সংকলিত করেছেন। এমনই একটি জনপ্রিয় ধারা ছিল ৪০টি নির্বাচিত হাদীসের সংকলন। অসংখ্য উলামায়ে কিরাম তাঁদের নিজস্ব পছন্দানুযায়ী ৪০ হাদীসের সংকলন বের করলেও ইমাম নববীর আল আরবাঊন বা ইমাম নববীর চল্লিশ হাদিস সর্বাধিক জনপ্রিয়তা ও প্রসিদ্ধি লাভ করেছে। আর তাইতো যুগে যুগে লাখো আলিম-উলামা ও আওয়ামদের দরসে ও মুযাকারায় প্রতিনিয়ত এর চর্চা হচ্ছে।
 
-কিন্তু সংকলনটি কেন এত খ্যাতি ও গ্রহণযোগ্যতা পেল? কারণ, সংকলনটি সমগ্র ইসলামের একটা খোলাসা তুলে ধরে। কেউ যদি হাদীসগুলো পড়ে ও নিজের জীবনে বাস্তবায়ন করে তবে আশা করা যায়, ইসলামের সামগ্রিক রূপটাই তার জীবনে প্রতিফলিত হবে। এছাড়াও হাদীসগুলো সহজবোধ্য এবং প্রতিটি মুসলিমের বাস্তব জীবনের সাথে সম্পর্কিত। তাই এই সংকলনের প্রাসঙ্গিকতা শুধু আলিমগণের তাদরীসের মধ্যেই সীমাবদ্ধ নয়; বরং প্রতিটি সাধারণ মুসলিমদের জীবনের সাথেও অঙ্গাঙ্গিভাবে জড়িত। আর একারণেই বহু স্কলার ৪০ হাদীস সংকলন করলেও ইমাম নববীর মতো প্রসিদ্ধি অন্য কোনোটি পায়নি। <a href='https://itqaan.org/course/40-hadis-grsther-bzakhza' target='_blank'>https://itqaan.org/course/40-hadis-grsther-bzakhza</a>
+কিন্তু সংকলনটি কেন এত খ্যাতি ও গ্রহণযোগ্যতা পেল? কারণ, সংকলনটি সমগ্র ইসলামের একটা খোলাসা তুলে ধরে। কেউ যদি হাদীসগুলো পড়ে ও নিজের জীবনে বাস্তবায়ন করে তবে আশা করা যায়, ইসলামের সামগ্রিক রূপটাই তার জীবনে প্রতিফলিত হবে। এছাড়াও হাদীসগুলো সহজবোধ্য এবং প্রতিটি মুসলিমের বাস্তব জীবনের সাথে সম্পর্কিত। তাই এই সংকলনের প্রাসঙ্গিকতা শুধু আলিমগণের তাদরীসের মধ্যেই সীমাবদ্ধ নয়; বরং প্রতিটি সাধারণ মুসলিমদের জীবনের সাথেও অঙ্গাঙ্গিভাবে জড়িত। আর একারণেই বহু স্কলার ৪০ হাদীস সংকলন করলেও ইমাম নববীর মতো প্রসিদ্ধি অন্য কোনোটি পায়নি। <a href='https://itqaan.org/course/40-hadis-grsther-bzakhza' target='_blank'> Source</a>
                     </p>
                   </div>
 
@@ -91,12 +88,13 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                       <span className="text-emerald-600">✦</span> Source of Quotes
                     </h3>
                     <p className="leading-relaxed mb-3" style={{ fontFamily: 'Amiri, serif' }}>
-                      All quotes featured on this site are carefully selected from two primary sources:
+                      All contents featured on this site are carefully selected from below sources:
                     </p>
                     <ul className="space-y-2 ml-6" style={{ fontFamily: 'Amiri, serif' }}>
                       <li className="flex gap-2">
                         <span className="text-emerald-600 flex-shrink-0">•</span>
-                        <span><strong className="text-emerald-800">hadithbd:</strong><a href='https://www.hadithbd.com/hadith/detail/?book=14&section=194' target='_blank'> https://www.hadithbd.com/hadith/detail/?book=14&section=194</a></span>
+                        <span><strong className="text-emerald-800">hadithbd:</strong>
+                        <a href='https://www.hadithbd.com/hadith/detail/?book=14&section=194' target='_blank'> Link</a></span>
                       </li>
                       <li className="flex gap-2">
                         <span className="text-emerald-600 flex-shrink-0">•</span>

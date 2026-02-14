@@ -1,11 +1,16 @@
 import { motion, AnimatePresence } from 'motion/react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface QuoteDisplayProps {
   quote: string;
   author: string;
+  onNext?: () => void;
+  onPrev?: () => void;
+  disableNext?: boolean;
+  disablePrev?: boolean;
 }
 
-export function QuoteDisplay({ quote, author }: QuoteDisplayProps) {
+export function QuoteDisplay({ quote, author, onNext, onPrev, disableNext, disablePrev }: QuoteDisplayProps) {
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -54,6 +59,26 @@ export function QuoteDisplay({ quote, author }: QuoteDisplayProps) {
             <div className="h-px w-20 bg-gradient-to-r from-transparent to-emerald-600"></div>
             <div className="mx-4 text-emerald-600 text-2xl">✦</div>
             <div className="h-px w-20 bg-gradient-to-l from-transparent to-emerald-600"></div>
+          </div>
+          {/* Prev / Next controls */}
+          <div className="mt-6 flex items-center justify-center gap-4">
+            <button
+              onClick={onPrev}
+              disabled={disablePrev}
+              className={`p-2 rounded-full border transition disabled:opacity-40 disabled:cursor-not-allowed ${disablePrev ? 'bg-white/60 border-gray-200' : 'bg-emerald-50 border-emerald-300 hover:scale-105'}`}
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-5 h-5 text-emerald-700" />
+            </button>
+
+            <button
+              onClick={onNext}
+              disabled={disableNext}
+              className={`p-2 rounded-full border transition disabled:opacity-40 disabled:cursor-not-allowed ${disableNext ? 'bg-white/60 border-gray-200' : 'bg-emerald-50 border-emerald-300 hover:scale-105'}`}
+              aria-label="Next"
+            >
+              <ChevronRight className="w-5 h-5 text-emerald-700" />
+            </button>
           </div>
         </div>
       </motion.div>

@@ -53,9 +53,6 @@ export function Header({ onToggleSidebar }: HeaderProps) {
           <h1 className="text-2xl sm:text-3xl md:text-4xl text-teal-50 leading-tight break-words" style={{ fontFamily: 'Cinzel, serif' }}>
             ✦ ইমাম নববির চল্লিশ হাদিস ✦
           </h1>
-          <p className="text-xs sm:text-sm md:text-sm text-teal-200 mt-1 break-words" style={{ fontFamily: 'Amiri, serif' }}>
-            Collection of prophetic teachings that summarize the core principles of Islam
-          </p>
         </div>
 
         <div className="flex-1 flex justify-end">
