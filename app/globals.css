@@ -35,3 +35,33 @@ body {
 #__next {
   height: 100%;
 }
+
+/* Custom scrollbar styling for the right-hand page scrollbar */
+:root {
+  --scrollbar-track: rgba(4, 120, 87, 0.04) !important;
+  --scrollbar-thumb: rgba(16,185,129,0.28) !important;
+  --scrollbar-thumb-hover: rgba(16,185,129,0.46) !important;
+}
+
+/* WebKit (Chrome, Edge, Safari) */
+*::-webkit-scrollbar {
+  width: 12px !important;
+}
+*::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb) !important;
+  border-radius: 9999px !important;
+  border: 3px solid transparent !important;
+  background-clip: padding-box !important;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover) !important;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}

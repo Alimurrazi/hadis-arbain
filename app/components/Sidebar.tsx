@@ -13,7 +13,7 @@ export function Sidebar({ pages, currentPage, onPageChange, completedPages, onTo
   return (
     <aside className="w-72 bg-gradient-to-b from-teal-900/8 via-emerald-800/6 to-teal-900/8 border-r-2 border-teal-800/10 overflow-y-auto shadow-sm">
       <div className="p-6">
-        <div className="space-y-2">
+        <div className="space-y-4">
           {pages.map((page, index) => (
             <div key={index} className="relative">
               <button onClick={() => onPageChange(index)}
