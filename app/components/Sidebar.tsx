@@ -22,7 +22,7 @@ export function Sidebar({ pages, currentPage, onPageChange, completedPages, onTo
       />
 
       <aside
-        className={`fixed top-0 left-0 h-full w-72 transform transition-transform duration-300 z-30 bg-gradient-to-b from-teal-900/8 via-emerald-800/6 to-teal-900/8 border-r-2 border-teal-800/10 overflow-y-auto shadow-sm ${
+        className={`fixed top-0 left-0 h-full w-72 transform transition-transform duration-300 z-30 bg-white/95 md:bg-gradient-to-b md:from-teal-900/8 md:via-emerald-800/6 md:to-teal-900/8 border-r-2 border-gray-200 md:border-teal-800/10 overflow-y-auto shadow-xl md:shadow-sm text-gray-800 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:static md:translate-x-0`}
       >
@@ -31,7 +31,7 @@ export function Sidebar({ pages, currentPage, onPageChange, completedPages, onTo
           <div className="flex justify-end md:hidden mb-2">
             <button
               onClick={() => onClose && onClose()}
-              className="p-1 rounded bg-white/30 hover:bg-white/40 text-teal-900"
+              className="p-1 rounded bg-white/90 hover:bg-white text-teal-900 shadow-sm"
               aria-label="Close sidebar"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
