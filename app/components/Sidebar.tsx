@@ -11,7 +11,7 @@ interface SidebarProps {
 
 export function Sidebar({ pages, currentPage, onPageChange, completedPages, onToggleComplete }: SidebarProps) {
   return (
-    <aside className="w-72 bg-gray-50 border-r-2 border-gray-200 overflow-y-auto shadow-sm">
+    <aside className="w-72 bg-gradient-to-b from-teal-900/8 via-emerald-800/6 to-teal-900/8 border-r-2 border-teal-800/10 overflow-y-auto shadow-sm">
       <div className="p-6">
         <div className="space-y-2">
           {pages.map((page, index) => (

@@ -64,10 +64,10 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                     <div className="h-px w-16 bg-gradient-to-l from-transparent to-emerald-600"></div>
                   </div>
                   <h2 className="text-3xl text-emerald-900 mb-2 font-bold" style={{ fontFamily: 'Cinzel, serif' }}>
-                    About Islamic Wisdom
+                    ইমাম নববির চল্লিশ হাদিস
                   </h2>
-                  <p className="text-sm text-gray-700" style={{ fontFamily: 'Amiri, serif' }}>
-                    A Journey Through Timeless Islamic Teachings
+                  <p className="text-m text-gray-700" style={{ fontFamily: 'Amiri, serif' }}>
+                    Collection of prophetic teachings that summarize the core principles of Islam
                   </p>
                 </div>
 
@@ -75,13 +75,13 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 <div className="space-y-6 text-gray-800">
                   {/* Our Purpose */}
                   <div>
-                    <h3 className="text-xl text-emerald-700 mb-3 flex items-center gap-2 font-semibold" style={{ fontFamily: 'Cinzel, serif' }}>
+                    {/* <h3 className="text-xl text-emerald-700 mb-3 flex items-center gap-2 font-semibold" style={{ fontFamily: 'Cinzel, serif' }}>
                       <span className="text-emerald-600">✦</span> Our Purpose
-                    </h3>
+                    </h3> */}
                     <p className="leading-relaxed" style={{ fontFamily: 'Amiri, serif' }}>
-                      This website is dedicated to sharing the profound wisdom and beauty of Islamic teachings.
-                      Our intention is to inspire reflection, provide spiritual guidance, and showcase the timeless
-                      principles that have guided millions of believers for over 1,400 years.
+যুগে যুগে আলিমগণ হাদীসের ভাণ্ডার থেকে নির্দিষ্ট কিছু হাদীস চয়ন করে স্বতন্ত্র গ্রন্থে সংকলিত করেছেন। এমনই একটি জনপ্রিয় ধারা ছিল ৪০টি নির্বাচিত হাদীসের সংকলন। অসংখ্য উলামায়ে কিরাম তাঁদের নিজস্ব পছন্দানুযায়ী ৪০ হাদীসের সংকলন বের করলেও ইমাম নববীর আল আরবাঊন বা ইমাম নববীর চল্লিশ হাদিস সর্বাধিক জনপ্রিয়তা ও প্রসিদ্ধি লাভ করেছে। আর তাইতো যুগে যুগে লাখো আলিম-উলামা ও আওয়ামদের দরসে ও মুযাকারায় প্রতিনিয়ত এর চর্চা হচ্ছে।
+
+কিন্তু সংকলনটি কেন এত খ্যাতি ও গ্রহণযোগ্যতা পেল? কারণ, সংকলনটি সমগ্র ইসলামের একটা খোলাসা তুলে ধরে। কেউ যদি হাদীসগুলো পড়ে ও নিজের জীবনে বাস্তবায়ন করে তবে আশা করা যায়, ইসলামের সামগ্রিক রূপটাই তার জীবনে প্রতিফলিত হবে। এছাড়াও হাদীসগুলো সহজবোধ্য এবং প্রতিটি মুসলিমের বাস্তব জীবনের সাথে সম্পর্কিত। তাই এই সংকলনের প্রাসঙ্গিকতা শুধু আলিমগণের তাদরীসের মধ্যেই সীমাবদ্ধ নয়; বরং প্রতিটি সাধারণ মুসলিমদের জীবনের সাথেও অঙ্গাঙ্গিভাবে জড়িত। আর একারণেই বহু স্কলার ৪০ হাদীস সংকলন করলেও ইমাম নববীর মতো প্রসিদ্ধি অন্য কোনোটি পায়নি। <a href='https://itqaan.org/course/40-hadis-grsther-bzakhza' target='_blank'>https://itqaan.org/course/40-hadis-grsther-bzakhza</a>
                     </p>
                   </div>
 
@@ -96,19 +96,23 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                     <ul className="space-y-2 ml-6" style={{ fontFamily: 'Amiri, serif' }}>
                       <li className="flex gap-2">
                         <span className="text-emerald-600 flex-shrink-0">•</span>
-                        <span><strong className="text-emerald-800">The Holy Quran:</strong> The divine revelation sent to Prophet Muhammad (ﷺ),
-                        serving as the primary source of Islamic guidance and wisdom.</span>
+                        <span><strong className="text-emerald-800">hadithbd:</strong><a href='https://www.hadithbd.com/hadith/detail/?book=14&section=194' target='_blank'> https://www.hadithbd.com/hadith/detail/?book=14&section=194</a></span>
                       </li>
                       <li className="flex gap-2">
                         <span className="text-emerald-600 flex-shrink-0">•</span>
-                        <span><strong className="text-emerald-800">Hadith:</strong> The authentic sayings and teachings of Prophet Muhammad (ﷺ),
-                        which complement and explain the Quranic verses.</span>
+                        <span><strong className="text-emerald-800">ইমাম নববীর চল্লিশ হাদিস (মাকতাবাতুন নূর)</strong></span>
                       </li>
+
+                      <li className="flex gap-2">
+                        <span className="text-emerald-600 flex-shrink-0">•</span>
+                        <span><strong className="text-emerald-800">হাদিসে আরবাইন (মাকতাবাতুল আসলাফ)</strong> </span>
+                      </li>
+
                     </ul>
                   </div>
 
                   {/* Design Inspiration */}
-                  <div>
+                  {/* <div>
                     <h3 className="text-xl text-emerald-700 mb-3 flex items-center gap-2 font-semibold" style={{ fontFamily: 'Cinzel, serif' }}>
                       <span className="text-emerald-600">✦</span> Design Inspiration
                     </h3>
@@ -118,10 +122,10 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                       Each page features unique color schemes and layered Islamic geometric patterns to create a
                       spiritually uplifting experience.
                     </p>
-                  </div>
+                  </div> */}
 
                   {/* Sharing the Message */}
-                  <div>
+                  {/* <div>
                     <h3 className="text-xl text-emerald-700 mb-3 flex items-center gap-2 font-semibold" style={{ fontFamily: 'Cinzel, serif' }}>
                       <span className="text-emerald-600">✦</span> Our Hope
                     </h3>
@@ -130,7 +134,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                       May they serve as gentle reminders of faith, patience, compassion, and the eternal wisdom that
                       transcends time and place.
                     </p>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Footer decoration */}
