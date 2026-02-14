@@ -113,6 +113,8 @@ useEffect(() => {
               onPrev={() => setCurrentPage((c) => Math.max(c - 1, 0))}
               disableNext={currentPage >= quotePages.length - 1}
               disablePrev={currentPage <= 0}
+              onToggleMark={() => handleToggleComplete(currentPage)}
+              isMarked={completedPages.has(currentPage)}
             />
           </div>
 

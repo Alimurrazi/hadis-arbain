@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 
 interface QuoteDisplayProps {
   quote: string;
@@ -8,9 +8,11 @@ interface QuoteDisplayProps {
   onPrev?: () => void;
   disableNext?: boolean;
   disablePrev?: boolean;
+  onToggleMark?: () => void;
+  isMarked?: boolean;
 }
 
-export function QuoteDisplay({ quote, author, onNext, onPrev, disableNext, disablePrev }: QuoteDisplayProps) {
+export function QuoteDisplay({ quote, author, onNext, onPrev, disableNext, disablePrev, onToggleMark, isMarked }: QuoteDisplayProps) {
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -72,6 +74,15 @@ export function QuoteDisplay({ quote, author, onNext, onPrev, disableNext, disab
             </button>
 
             <button
+              onClick={onToggleMark}
+              aria-pressed={isMarked}
+              className={`flex items-center gap-2 px-3 py-2 rounded-md border transition ${isMarked ? 'bg-emerald-600 text-white border-emerald-600' : 'bg-white border-gray-200 text-emerald-700 hover:bg-emerald-50'}`}
+            >
+              <Check className="w-4 h-4" />
+              {/* <span className="text-sm font-medium">{isMarked ? 'Marked' : 'Mark'}</span> */}
+            </button>
+
+            <button
               onClick={onNext}
               disabled={disableNext}
               className={`p-2 rounded-full border transition disabled:opacity-40 disabled:cursor-not-allowed ${disableNext ? 'bg-white/60 border-gray-200' : 'bg-emerald-50 border-emerald-300 hover:scale-105'}`}
@@ -80,6 +91,7 @@ export function QuoteDisplay({ quote, author, onNext, onPrev, disableNext, disab
               <ChevronRight className="w-5 h-5 text-emerald-700" />
             </button>
           </div>
+
         </div>
       </motion.div>
     </AnimatePresence>
