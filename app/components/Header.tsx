@@ -1,4 +1,8 @@
-export function Header() {
+interface HeaderProps {
+  onToggleSidebar?: () => void;
+}
+
+export function Header({ onToggleSidebar }: HeaderProps) {
   return (
     <header className="relative w-full h-24 bg-gradient-to-r from-teal-900 via-emerald-800 to-teal-900 border-b-4 border-teal-600 overflow-hidden">
       {/* Persian motif pattern */}
@@ -31,6 +35,18 @@ export function Header() {
 
       {/* Header content */}
       <div className="relative z-10 h-full flex items-center justify-between px-8">
+        <div className="flex-none mr-4 md:hidden">
+          <button
+            onClick={() => onToggleSidebar && onToggleSidebar()}
+            aria-label="Toggle sidebar"
+            className="p-2 rounded-md bg-teal-800/30 hover:bg-teal-800/40 text-teal-50"
+          >
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
         <div className="flex-1"></div>
 
         <div className="text-center">

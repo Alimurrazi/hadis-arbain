@@ -12,6 +12,7 @@ import { ProgressBar } from './components/ProgressBar';
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(0);
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const [completedPages, setCompletedPages] = useState(new Set<number>());
 
@@ -37,6 +38,15 @@ useEffect(() => {
     return () => window.removeEventListener('openAboutModal', handleOpenAboutModal);
   }, []);
 
+  // Initialize sidebar visibility based on viewport width (mobile: closed)
+  useEffect(() => {
+    const m = window.matchMedia('(min-width: 768px)');
+    const apply = () => setIsSidebarOpen(m.matches);
+    apply();
+    m.addEventListener('change', apply);
+    return () => m.removeEventListener('change', apply);
+  }, []);
+
     const handleToggleComplete = (pageIndex: number) => {
     setCompletedPages((prev) => {
       const newSet = new Set(prev);
@@ -51,7 +61,7 @@ useEffect(() => {
 
   return (
     <div className="size-full flex flex-col bg-white">
-      <Header />
+      <Header onToggleSidebar={() => setIsSidebarOpen((s) => !s)} />
 
       <ProgressBar completed={completedPages.size} total={quotePages.length} />
       
@@ -60,9 +70,17 @@ useEffect(() => {
         <Sidebar
           pages={quotePages}
           currentPage={currentPage}
-          onPageChange={setCurrentPage}
+          onPageChange={(idx) => {
+            setCurrentPage(idx);
+            // close sidebar on mobile after selecting
+            if (window.matchMedia && !window.matchMedia('(min-width: 768px)').matches) {
+              setIsSidebarOpen(false);
+            }
+          }}
           completedPages={completedPages}
           onToggleComplete={handleToggleComplete}
+          isOpen={isSidebarOpen}
+          onClose={() => setIsSidebarOpen(false)}
         />
 
         <main className="flex-1 relative overflow-hidden">

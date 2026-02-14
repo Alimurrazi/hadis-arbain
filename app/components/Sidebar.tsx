@@ -7,15 +7,41 @@ interface SidebarProps {
   onPageChange: (pageIndex: number) => void;
   completedPages: Set<number>;
   onToggleComplete: (pageIndex: number) => void;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
-export function Sidebar({ pages, currentPage, onPageChange, completedPages, onToggleComplete }: SidebarProps) {
+export function Sidebar({ pages, currentPage, onPageChange, completedPages, onToggleComplete, isOpen = true, onClose }: SidebarProps) {
   return (
-    <aside className="w-72 bg-gradient-to-b from-teal-900/8 via-emerald-800/6 to-teal-900/8 border-r-2 border-teal-800/10 overflow-y-auto shadow-sm">
-      <div className="p-6">
-        <div className="space-y-4">
-          {pages.map((page, index) => (
-            <div key={index} className="relative">
+    <>
+      {/* Backdrop for mobile when sidebar is open */}
+      <div
+        className={`fixed inset-0 bg-black/30 z-20 transition-opacity md:hidden ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        aria-hidden={!isOpen}
+        onClick={() => onClose && onClose()}
+      />
+
+      <aside
+        className={`fixed top-0 left-0 h-full w-72 transform transition-transform duration-300 z-30 bg-gradient-to-b from-teal-900/8 via-emerald-800/6 to-teal-900/8 border-r-2 border-teal-800/10 overflow-y-auto shadow-sm ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        } md:static md:translate-x-0`}
+      >
+        <div className="p-6">
+          {/* Close button for mobile */}
+          <div className="flex justify-end md:hidden mb-2">
+            <button
+              onClick={() => onClose && onClose()}
+              className="p-1 rounded bg-white/30 hover:bg-white/40 text-teal-900"
+              aria-label="Close sidebar"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M6 18L18 6" />
+              </svg>
+            </button>
+          </div>
+          <div className="space-y-4">
+            {pages.map((page, index) => (
+              <div key={index} className="relative">
               <button onClick={() => onPageChange(index)}
               className={`w-full text-left p-4 pr-12 rounded-lg transition-all duration-300 border-2 ${
                 currentPage === index 
@@ -69,6 +95,7 @@ export function Sidebar({ pages, currentPage, onPageChange, completedPages, onTo
           ))}
         </div>
       </div>
-    </aside>
+      </aside>
+    </>
   );
 }
