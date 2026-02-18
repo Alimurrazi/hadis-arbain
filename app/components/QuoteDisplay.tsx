@@ -67,28 +67,30 @@ export function QuoteDisplay({ quote, author, onNext, onPrev, disableNext, disab
             <button
               onClick={onPrev}
               disabled={disablePrev}
-              className={`p-2 rounded-full border transition disabled:opacity-40 disabled:cursor-not-allowed ${disablePrev ? 'bg-white/60 border-gray-200' : 'bg-emerald-50 border-emerald-300 hover:scale-105'}`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-md border transition disabled:opacity-40 disabled:cursor-not-allowed ${disablePrev ? 'bg-white/60 border-gray-200 text-gray-400' : 'bg-emerald-50 border-emerald-300 text-emerald-700 hover:bg-emerald-100 hover:scale-105'}`}
               aria-label="Previous"
             >
-              <ChevronLeft className="w-5 h-5 text-emerald-700" />
+              <ChevronLeft className="w-4 h-4" />
+              <span className="text-sm font-medium">Back</span>
             </button>
 
             <button
               onClick={onToggleMark}
               aria-pressed={isMarked}
-              className={`flex items-center gap-2 px-3 py-2 rounded-md border transition ${isMarked ? 'bg-emerald-600 text-white border-emerald-600' : 'bg-white border-gray-200 text-emerald-700 hover:bg-emerald-50'}`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-md border transition ${isMarked ? 'bg-emerald-600 text-white border-emerald-600 hover:bg-emerald-700' : 'bg-white border-gray-200 text-emerald-700 hover:bg-emerald-50'}`}
             >
               <Check className="w-4 h-4" />
-              {/* <span className="text-sm font-medium">{isMarked ? 'Marked' : 'Mark'}</span> */}
+              <span className="text-sm font-medium">{isMarked ? 'Marked as Read' : 'Mark as Read'}</span>
             </button>
 
             <button
               onClick={onNext}
               disabled={disableNext}
-              className={`p-2 rounded-full border transition disabled:opacity-40 disabled:cursor-not-allowed ${disableNext ? 'bg-white/60 border-gray-200' : 'bg-emerald-50 border-emerald-300 hover:scale-105'}`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-md border transition disabled:opacity-40 disabled:cursor-not-allowed ${disableNext ? 'bg-white/60 border-gray-200 text-gray-400' : 'bg-emerald-50 border-emerald-300 text-emerald-700 hover:bg-emerald-100 hover:scale-105'}`}
               aria-label="Next"
             >
-              <ChevronRight className="w-5 h-5 text-emerald-700" />
+              <span className="text-sm font-medium">Next</span>
+              <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
