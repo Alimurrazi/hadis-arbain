@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 
 interface QuoteDisplayProps {
   quote: string;
-  author: string;
+  source: string;
   onNext?: () => void;
   onPrev?: () => void;
   disableNext?: boolean;
@@ -12,7 +12,7 @@ interface QuoteDisplayProps {
   isMarked?: boolean;
 }
 
-export function QuoteDisplay({ quote, author, onNext, onPrev, disableNext, disablePrev, onToggleMark, isMarked }: QuoteDisplayProps) {
+export function QuoteDisplay({ quote, source, onNext, onPrev, disableNext, disablePrev, onToggleMark, isMarked }: QuoteDisplayProps) {
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -43,14 +43,14 @@ export function QuoteDisplay({ quote, author, onNext, onPrev, disableNext, disab
             <div className="absolute -right-2 -bottom-2 text-4xl text-theme-accent/20" style={{ fontFamily: 'Cinzel, serif' }}>"</div>
           </blockquote>
 
-          {/* Author */}
+          {/* Source */}
           <div className="mt-8 text-center">
             <div className="inline-block">
               <p
                 className="text-lg md:text-xl text-theme-accent-dark italic font-semibold"
                 style={{ fontFamily: 'Amiri, serif' }}
               >
-                — {author}
+                — {source}
               </p>
               <div className="mt-2 h-0.5 bg-gradient-to-r from-transparent via-theme-accent to-transparent"></div>
             </div>

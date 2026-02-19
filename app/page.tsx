@@ -108,7 +108,7 @@ useEffect(() => {
           <div className="relative z-10 h-full flex items-center justify-center p-8">
             <QuoteDisplay
               quote={page.quote}
-              author={page.author}
+              source={page.source}
               onNext={() => setCurrentPage((c) => Math.min(c + 1, quotePages.length - 1))}
               onPrev={() => setCurrentPage((c) => Math.max(c - 1, 0))}
               disableNext={currentPage >= quotePages.length - 1}
