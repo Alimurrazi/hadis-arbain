@@ -12,7 +12,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Key goals
 
-- Present a browsable collection of quotes/hadith organized by themed pages
+- Present a browsable collection of hadith organized by themed pages
 - Provide a calm, readable UI with subtle geometric ornamentation
 - Lightweight, static-friendly Next.js app using Tailwind CSS
 
