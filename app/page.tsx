@@ -60,11 +60,11 @@ useEffect(() => {
   };
 
   return (
-    <div className="size-full flex flex-col bg-white">
+    <div className="size-full flex flex-col bg-theme-base">
       <Header onToggleSidebar={() => setIsSidebarOpen((s) => !s)} />
 
       <ProgressBar completed={completedPages.size} total={quotePages.length} />
-      
+
 
       <div className="flex-1 flex overflow-hidden">
         <Sidebar
@@ -120,25 +120,25 @@ useEffect(() => {
 
           {/* Decorative corner elements */}
           <div className="absolute top-0 left-0 w-32 h-32 opacity-20">
-            <svg viewBox="0 0 100 100" className="w-full h-full text-emerald-400">
+            <svg viewBox="0 0 100 100" className="w-full h-full text-theme-accent-bright">
               <path d="M 0 0 L 0 30 Q 0 0 30 0 Z" fill="currentColor" />
               <circle cx="15" cy="15" r="8" fill="none" stroke="currentColor" strokeWidth="0.5"/>
             </svg>
           </div>
           <div className="absolute top-0 right-0 w-32 h-32 opacity-20 rotate-90">
-            <svg viewBox="0 0 100 100" className="w-full h-full text-emerald-400">
+            <svg viewBox="0 0 100 100" className="w-full h-full text-theme-accent-bright">
               <path d="M 0 0 L 0 30 Q 0 0 30 0 Z" fill="currentColor" />
               <circle cx="15" cy="15" r="8" fill="none" stroke="currentColor" strokeWidth="0.5"/>
             </svg>
           </div>
           <div className="absolute bottom-0 left-0 w-32 h-32 opacity-20 -rotate-90">
-            <svg viewBox="0 0 100 100" className="w-full h-full text-emerald-400">
+            <svg viewBox="0 0 100 100" className="w-full h-full text-theme-accent-bright">
               <path d="M 0 0 L 0 30 Q 0 0 30 0 Z" fill="currentColor" />
               <circle cx="15" cy="15" r="8" fill="none" stroke="currentColor" strokeWidth="0.5"/>
             </svg>
           </div>
           <div className="absolute bottom-0 right-0 w-32 h-32 opacity-20 rotate-180">
-            <svg viewBox="0 0 100 100" className="w-full h-full text-emerald-400">
+            <svg viewBox="0 0 100 100" className="w-full h-full text-theme-accent-bright">
               <path d="M 0 0 L 0 30 Q 0 0 30 0 Z" fill="currentColor" />
               <circle cx="15" cy="15" r="8" fill="none" stroke="currentColor" strokeWidth="0.5"/>
             </svg>

@@ -1,8 +1,14 @@
+'use client';
+import { Sun, Moon } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
+
 interface HeaderProps {
   onToggleSidebar?: () => void;
 }
 
 export function Header({ onToggleSidebar }: HeaderProps) {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <header className="relative w-full h-20 md:h-24 bg-gradient-to-r from-teal-900 via-emerald-800 to-teal-900 border-b-4 border-teal-600 overflow-hidden">
       {/* Persian motif pattern */}
@@ -34,8 +40,9 @@ export function Header({ onToggleSidebar }: HeaderProps) {
       </div>
 
       {/* Header content */}
-      <div className="relative z-10 h-full flex items-center justify-between px-4 md:px-8">
-        <div className="flex-none mr-4 md:hidden">
+      <div className="relative z-10 h-full flex items-center px-4 md:px-8 gap-2">
+        {/* Left: hamburger on mobile only */}
+        <div className="flex-none md:hidden">
           <button
             onClick={() => onToggleSidebar && onToggleSidebar()}
             aria-label="Toggle sidebar"
@@ -47,15 +54,22 @@ export function Header({ onToggleSidebar }: HeaderProps) {
           </button>
         </div>
 
-        <div className="flex-1"></div>
-
-        <div className="text-center px-2">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl text-teal-50 leading-tight break-words" style={{ fontFamily: 'Cinzel, serif' }}>
+        {/* Center: title fills remaining space */}
+        <div className="flex-1 min-w-0 text-center px-1">
+          <h1 className="text-base sm:text-3xl md:text-4xl text-teal-50 leading-tight" style={{ fontFamily: 'Cinzel, serif' }}>
             ✦ ইমাম নববির চল্লিশ হাদিস ✦
           </h1>
         </div>
 
-        <div className="flex-1 flex justify-end">
+        {/* Right: action buttons */}
+        <div className="flex-none flex items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className="p-2 sm:px-3 sm:py-2 bg-teal-800/30 hover:bg-teal-800/40 border border-emerald-500/50 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+          >
+            {theme === 'dark' ? <Sun className="w-4 h-4 text-teal-50" /> : <Moon className="w-4 h-4 text-teal-50" />}
+          </button>
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('openAboutModal'))}
             className="px-3 py-1 sm:px-6 sm:py-2 bg-emerald-700/60 hover:bg-emerald-600/70 border border-emerald-500/50 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
