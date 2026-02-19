@@ -33,7 +33,7 @@ const amiri = Amiri({
 });
 
 export const metadata: Metadata = {
-  title: "Islamic Wisdom - Timeless Quotes",
+  title: "Hadits Arbain - Timeless Quotes",
   description: "Beautiful Islamic quotes and wisdom from the Quran and Hadith",
 };
 
