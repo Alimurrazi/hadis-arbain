@@ -22,7 +22,7 @@ export function Sidebar({ pages, currentPage, onPageChange, completedPages, onTo
       />
 
       <aside
-        className={`fixed top-0 left-0 h-full w-72 transform transition-transform duration-300 z-30 bg-white/95 md:bg-gradient-to-b md:from-teal-900/8 md:via-emerald-800/6 md:to-teal-900/8 border-r-2 border-gray-200 md:border-teal-800/10 overflow-y-auto shadow-xl md:shadow-sm text-gray-800 ${
+        className={`fixed top-0 left-0 h-full w-72 transform transition-transform duration-300 z-30 bg-theme-base/95 md:bg-gradient-to-b md:from-teal-900/8 md:via-emerald-800/6 md:to-teal-900/8 border-r-2 border-theme-border md:border-teal-800/10 overflow-y-auto shadow-xl md:shadow-sm text-theme-text-primary ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:static md:translate-x-0`}
       >
@@ -31,7 +31,7 @@ export function Sidebar({ pages, currentPage, onPageChange, completedPages, onTo
           <div className="flex justify-end md:hidden mb-2">
             <button
               onClick={() => onClose && onClose()}
-              className="p-1 rounded bg-white/90 hover:bg-white text-teal-900 shadow-sm"
+              className="p-1 rounded bg-theme-base/90 hover:bg-theme-base text-teal-900 shadow-sm"
               aria-label="Close sidebar"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -44,17 +44,17 @@ export function Sidebar({ pages, currentPage, onPageChange, completedPages, onTo
               <div key={index} className="relative">
               <button onClick={() => onPageChange(index)}
               className={`w-full text-left p-4 pr-12 rounded-lg transition-all duration-300 border-2 ${
-                currentPage === index 
-                ? 'bg-emerald-100 border-emerald-600 shadow-lg scale-105'
-                : 'bg-white border-gray-200 hover:bg-gray-100 hover:border-emerald-300'
+                currentPage === index
+                ? 'bg-theme-surface-med border-theme-accent shadow-lg scale-105'
+                : 'bg-theme-base border-theme-border hover:bg-theme-surface hover:border-theme-accent-dark'
               }`}
   >
     <div className="flex items-center gap-3">
       <div
         className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold ${
           currentPage === index
-            ? 'bg-emerald-600 text-white'
-            : 'bg-gray-200 text-gray-700'
+            ? 'bg-theme-accent text-white'
+            : 'bg-theme-surface text-theme-text-secondary'
         }`}
         style={{ fontFamily: 'Cinzel, serif' }}
       >
@@ -64,7 +64,7 @@ export function Sidebar({ pages, currentPage, onPageChange, completedPages, onTo
       <div className="flex-1 min-w-0">
         <h3
           className={`text-xs font-medium break-words ${
-            currentPage === index ? 'text-emerald-900' : 'text-gray-700'
+            currentPage === index ? 'text-theme-accent-darker' : 'text-theme-text-secondary'
           }`}
           style={{ fontFamily: 'Cinzel, serif' }}
         >
@@ -81,8 +81,8 @@ export function Sidebar({ pages, currentPage, onPageChange, completedPages, onTo
     }}
     className={`absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded border-2 flex items-center justify-center transition-all duration-300 ${
       completedPages.has(index)
-        ? 'bg-emerald-500 border-emerald-400 shadow-lg'
-        : 'bg-white border-gray-300 hover:border-emerald-400'
+        ? 'bg-theme-accent border-theme-accent shadow-lg'
+        : 'bg-theme-base border-theme-border-med hover:border-theme-accent'
     }`}
     title={completedPages.has(index) ? 'Mark as unread' : 'Mark as completed'}
   >
