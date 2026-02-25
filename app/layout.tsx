@@ -33,8 +33,21 @@ const amiri = Amiri({
 });
 
 export const metadata: Metadata = {
-  title: "Hadits Arbain - Timeless Quotes",
-  description: "Beautiful Islamic quotes and wisdom from the Quran and Hadith",
+  title: "ইমাম নববির চল্লিশ হাদিস | Hadis Arbain বাংলা",
+  description: "ইমাম নববির চল্লিশ হাদিসের সম্পূর্ণ বাংলা অনুবাদ। Hadis Arbain in Bengali with explanation.",
+  keywords: "হাদিস আরবাইন, চল্লিশ হাদিস, Imam Nawawi 40 Hadith Bengali, Hadis বাংলা",
+  authors: [{ name: "Alimur Razi" }],
+  robots: "index, follow",
+  verification: {
+    google: "KQ9Pk76W4VMXOV_meyntYI9or4m2Sn5qk0DYxTjLOXU",
+  },
+  openGraph: {
+    title: "ইমাম নববির চল্লিশ হাদিস",
+    description: "চল্লিশ হাদিসের বাংলা অনুবাদ।",
+    url: "https://hadis-arbain.vercel.app/",
+    type: "website",
+    images: [{ url: "https://hadis-arbain.vercel.app/og-image.jpg" }],
+  },
 };
 
 export default function RootLayout({
