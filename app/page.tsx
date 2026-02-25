@@ -8,6 +8,7 @@ import { QuoteDisplay } from './components/QuoteDisplay';
 import { AboutModal } from './components/AboutModal';
 import { quotePages } from './data/quotes';
 import { ProgressBar } from './components/ProgressBar';
+import { SeoHead } from './components/SeoHead';
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -60,12 +61,11 @@ useEffect(() => {
   };
 
   return (
+  <>
+  <SeoHead/>
     <div className="size-full flex flex-col bg-theme-base">
       <Header onToggleSidebar={() => setIsSidebarOpen((s) => !s)} />
-
       <ProgressBar completed={completedPages.size} total={quotePages.length} />
-
-
       <div className="flex-1 flex overflow-hidden">
         <Sidebar
           pages={quotePages}
@@ -146,10 +146,9 @@ useEffect(() => {
         </main>
       </div>
 
-      {/* <Footer /> */}
-
       {/* About Modal */}
       <AboutModal isOpen={isAboutModalOpen} onClose={() => setIsAboutModalOpen(false)} />
     </div>
+    </>
   );
 }
